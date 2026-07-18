@@ -175,12 +175,7 @@ runnable submission, and I'd rather be upfront about that than quietly fake it.
 
 ## AI tools used
 
-This scaffold (models, agents, orchestrator, prompts, tests, README) was built with
-Claude (Anthropic) as a coding assistant, reviewing and iterating on each piece
-rather than accepting a single unreviewed generation. The pipeline's own agents use
-Claude (`claude-sonnet-4-6`) by default via `ANTHROPIC_API_KEY`; swapping to
-`LLM_PROVIDER=openai` uses GPT-4o instead with no other code changes, since both go
-through the same `LLMClient.complete_json` interface.
+Built in Cursor (my day-to-day IDE). AI assistance was used as follows: ChatGPT helped resolve the initial project directory structure and file setup; both Claude and ChatGPT were used to check syntax and evaluate the best fix in each case during development.
 
 ## Other tradeoffs / known limitations
 

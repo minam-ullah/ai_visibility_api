@@ -1,0 +1,27 @@
+services:
+  api:
+    build: .
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    environment:
+      # Overrides .env's DATABASE_URL to point at the compose Postgres service.
+      # Comment this out (and the db service below) to use SQLite instead.
+      DATABASE_URL: postgresql://ai_visibility:ai_visibility@db:5432/ai_visibility
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ai_visibility
+      POSTGRES_PASSWORD: ai_visibility
+      POSTGRES_DB: ai_visibility
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

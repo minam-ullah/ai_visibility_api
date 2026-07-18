@@ -225,6 +225,3 @@ interface.
 - **Docker Compose** — see "Setup" above.
 - **Unit tests for agent logic** — see "AI tools used" / `tests/test_agents.py`
   (12 tests: 3 agents + validation schema + opportunity formula).
-
-Not implemented: async pipeline execution with polling (explicitly optional per the
-brief), and a Loom walkthrough (up to you to record before submitting).
